@@ -11,7 +11,8 @@
 <body>
     <div id = 'calculator-body'>
         <div id = 'display'>
-            <div id = 'history-line'></div>
+            <div id = 'history-line'>0</div>
+            <div id = 'history-line-operator'></div>
             <div id = 'current-line'></div>
         </div>
         <div id = 'keyboard'>
@@ -28,14 +29,13 @@
             </div>
 
             <button id = 'num-0' class = 'num 0'>0</button>
-            <button id = 'point' class = 'operational'>.</button>
-
+            <button id = 'point' class = 'num .'>.</button>
             <button id = 'plus' class = 'operational'>+</button>
             <button id = 'minus' class = 'operational'>-</button>
-            <button id = 'multiply' class = 'operational'>X</button>
+            <button id = 'multiply' class = 'operational'>*</button>
             <button id = 'divide' class = 'operational'>/</button>
-            <button id = 'square' class = 'operational'>x<sup>2</sup></button>
-            <button id = 'sqrt' class = 'operational'>√</button>
+            <button id = 'square' class = 'operational' data = "**">x<sup>2</sup></button>
+            <button id = 'sqrt' class = 'operational' data = "Math.sqrt()">√</button>
             <button id = 'equals' class = 'operational'>=</button>
             <button id = 'clear' class = 'operational'>C</button>
         </div>

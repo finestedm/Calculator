@@ -3,15 +3,39 @@
     src: url('./Rubik-VariableFont_wght.ttf');
 }
 
+@font-face {
+    font-family: 'Digital';
+    src: url('./digital-7\ \(mono\).ttf');
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: "Rubik", sans-serif;
+    font-family: "Digital", monospace;
+    font-size: 4rem;
 }
 
+#display {
+    background-color: #6b6b6b;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+}
 
+#history-line {
+    font-size: 2rem;
+    height: 2rem;
+    text-align: right;
+    padding: .7rem;
+    border-bottom: 1px solid #252525;
+}
+
+#current-line {
+    text-align: right;
+    padding: .7rem;
+
+}
 
 button {
     width: 100%;
@@ -30,7 +54,10 @@ button:hover {
 
     border: none;
     background-color: rgba(22, 207, 167, 0.349);
-    border-radius: 100%;
+    border: none;
+
+    box-shadow: 0 0 5px #0000007e;
+    scale: 1.02;
 }
 
 #calculator-body {
@@ -104,4 +131,9 @@ button:hover {
 
 #equals {
     grid-area: equals;
+    background-color: #0077ff;
+}
+
+#clear {
+    background-color: #99002e;
 }
