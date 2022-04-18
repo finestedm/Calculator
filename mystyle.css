@@ -23,18 +23,26 @@ body {
     border-radius: 1rem;
 }
 
-#history-line {
+#history {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
     font-size: 2rem;
     height: 2rem;
-    text-align: right;
-    padding: .7rem;
+    padding: 1rem;
     border-bottom: 1px solid #252525;
 }
+
+#history-line-operator {
+    font-size: 3rem;
+
+}
+
 
 #current-line {
     text-align: right;
     padding: .7rem;
-
 }
 
 button {
@@ -58,6 +66,7 @@ button:hover {
 
     box-shadow: 0 0 5px #0000007e;
     scale: 1.02;
+    rotate: 4deg;
 }
 
 #calculator-body {
