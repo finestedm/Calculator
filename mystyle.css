@@ -15,14 +15,14 @@ body {
     height: 100vh;
     font-family: "Digital", monospace;
     font-size: 4rem;
-    background-color: #FBFAF8;
+    background-color: #F4F4F9;
 
 }
 
 #display {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #F4F4F9;
     margin-bottom: 1.5rem;
     border-radius: .3rem;
     display: flex;
@@ -59,23 +59,41 @@ body {
 }
 
 button {
+    position: relative;
     width: 100%;
     height: 10vh;
-    background-color: #ffffff28;
-    border: none;
+    background-color: #ffffff1c;
+    border: 1px solid rgba(0, 0, 0, 0.568);
     transition: all 0.2s ease-in;
     border-radius: .3rem;
     font-family: "Rubik";
     font-weight: 500;
     font-size: 2rem;
-    color: #B8B8D1;
+    color: #e5e6ee;
+}
+
+button::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #b5b3d386;
+    z-index: 10;
+    opacity: 0;
+    border-radius: .3rem;
+    transition: all 0.2s ease-in;
 }
 
 button:hover {
+    box-shadow: 0 0 15px #dad1d11f;
+    scale: .98;
+    color: #ffffff;
+}
 
-    border: none;
-    box-shadow: 0 0 5px #0000007e;
-    scale: .95;
+button:hover::before {
+    opacity: 1;
 }
 
 upper {
@@ -92,7 +110,7 @@ upper {
     padding: 1rem;
     border: 2px solid #000;
     border-radius: .5rem;
-    background-color: #252525;
+    background-color: #25292F;
 }
 
 #keyboard {
@@ -105,7 +123,7 @@ upper {
     grid-template-areas: "numerical numerical numerical plus minus"
         "numerical numerical numerical multiply devide"
         "numerical numerical numerical square sqrt"
-        "point num-0 backspace equals . ";
+        "point num-0 equals backspace . ";
 }
 
 .numerical {
@@ -146,15 +164,18 @@ upper {
 
 #backspace {
     grid-area: backspace;
+    background-color: #EFA00B;
+    color: #000;
+
 }
 
 #equals {
     grid-area: equals;
-    background-color: #FF8811;
+    background-color: #0075C4;
     color: #000;
 }
 
 #clear {
-    background-color: #A5243D;
+    background-color: #EA2B1F;
     color: #000;
 }
