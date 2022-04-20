@@ -28,7 +28,12 @@ buttonList.forEach(element => {                             // add event listene
                 displayCurrentLine.innerHTML = '';
                 displayHistoryLineOperator.innerHTML = '';
                 displayHistoryLine.innerHTML = '';
-
+            } else if (e.target.id == 'opposite') {
+                textToChange = displayCurrentLine.innerHTML;
+                changeSign(textToChange);
+            } else if (e.target.id == 'backspace') {
+                textToChange = displayCurrentLine.innerHTML;
+                deleteLastDigit(textToChange);
             }
         } else {
             addTextToCurrentLine(e.target.firstChild.data);         // if pressed button is digit then add the digit to the current display
@@ -57,6 +62,28 @@ function doOperation(operationType, arg1 = 0, arg2 = 0) {
         } else if (operationType == '/') {
             var result = (arg2 === 0) ? 'we are doomed!' : (arg1 / arg2);
             return result;
+        } else if (operationType == 'x^x') {
+            return arg1 ** arg2
         }
     }
 }
+
+function changeSign(textToChange) {
+    if (textToChange[0] === '-') {
+        displayCurrentLine.innerHTML = textToChange.slice(1);
+    } else {
+        displayCurrentLine.innerHTML = ('-' + textToChange);
+    }
+}
+
+function deleteLastDigit(textToChange) {
+    if (textToChange.length > 0) {
+        displayCurrentLine.innerHTML = textToChange.slice(0, -1);
+    }
+}
+
+// function roundNumber(numberToRound) {    // do this later
+//     numberToRound = String(numberToRound);
+//     numberToRoundSplit = numberToRound.split('.');
+//     console.log(numberToRoundSplit);
+// }
